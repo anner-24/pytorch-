@@ -11,7 +11,7 @@
     打开命令行窗口输入nvidia-smi查看显卡的cuda支持的版本，具体的pytorch-cuda-cudatitle版本对应关系需要查看手册
 ### 建立python3.6环境
     打开conda的命令行窗口，初始显示为（base）
-    输入```conda create -n pytorch python=3.6```
+    输入conda create -n pytorch python=3.6
     开始下载pytorch所需环境，询问是否移除搭建的环境，输入y
     环境需要安装的包，输入y
     安装成功后需要激活pytorch环境，输入activate pytorch，左边转为显示（pytorch），可以输入pip list 查看已经安装的包
@@ -21,6 +21,21 @@
 ### 检验是否安装成功
     conda命令行输入python，进入python页面，输入import torch，能够继续出现不报错
     继续输入torch.conda.is_available()检验是否返回True，返回True即为安装成功
+### 安装pycharm
+    官网下载社区版pycharm即可，配置pycharm环境，需要在解释器里选择Anaconda路径里envs虚拟环境里的python文件，这样才可以使用pytorch
+    错误一般是pytorch、torchvision、cuda版本不配可以去官网查询对应文档
+    检验是否成功和上面方法一样，在pycharm的console里输入import torch，能够继续出现不报错
+    继续输入torch.conda.is_available()检验是否返回True，返回True即为安装成功
+    注意解释器的选择，需要在Anaconda的路径里选择的，否则无法使用torch
+### 配置jupyter notebook
+    在conda命令行中激活pytorch后输入conda install nb_conda如果一直在 solving，可以改成使用
+    pip install notebook
+    安装完成之后使用
+    pip list
+    查看是否有所需要的库文件，i开头的4个文件
+    解决所有问题后打开Jupyter后发现没有创建的虚拟环境，只有python 3
+    解决办法：打开Anaconda Prompt，进入pytorch环境，输入如下命令：python -m ipykernel install --name pytorch
+    输入jupyter notebook D：打开jupyter
 
     
     
